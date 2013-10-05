@@ -6,8 +6,8 @@ class Api::V1::PostsController < ApplicationController
   before_filter :authenticate_user!
   
   def create
-    @post = current_user.posts.build(params[:post])
-    
+    @post = current_user.posts.build(params[:post]) 
+   
     if @post.save
       @post
     else
@@ -15,8 +15,7 @@ class Api::V1::PostsController < ApplicationController
              :json => { :success => false,
                         :info => @posts.errors,
                         :data => {} }
-    end
-    
+    end 
   end
 
   def index

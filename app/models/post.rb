@@ -11,6 +11,6 @@ class Post < ActiveRecord::Base
   
   validates_presence_of :title, :content
   
-  default_scope order('completed ASC, created_at DESC')
+  default_scope order('created_at DESC')
   
 end
