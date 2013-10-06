@@ -14,6 +14,10 @@ Authwaketo::Application.routes.draw do
     end
      get 'posts' => 'posts#index', :as => 'posts'
      post 'posts' => 'posts#create'
+     
+     get 'users' => 'users#following', :as => 'following'
+     get 'users' => 'users#followers', :as => 'followers'
+     
   end
 end
 

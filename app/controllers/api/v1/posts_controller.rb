@@ -2,7 +2,6 @@ class Api::V1::PostsController < ApplicationController
   
   skip_before_filter :verify_authenticity_token,
                      :if => Proc.new { |c| c.request.format == 'application/json' }
-
   before_filter :authenticate_user!
   
   def create
@@ -18,6 +17,6 @@ class Api::V1::PostsController < ApplicationController
   end
 
   def index
-    @posts = current_user.posts
+    @posts = current_user.feed
   end
 end
